@@ -4,6 +4,7 @@ const TerserWebpackPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackTemplate = require("html-webpack-template");
 const path = require("path");
 
 const rootDirectory = path.resolve(__dirname);
@@ -140,7 +141,15 @@ function getPlugins(isDevelopment) {
   return [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(rootDirectory, "public", "index.html"),
+      inject: false,
+      template: HtmlWebpackTemplate,
+      appMountId: "app",
+      mobile: true,
+      lang: "en-US",
+      title: "Bausastra",
+      meta: {
+        viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
+      },
       minify: {
         collapseWhitespace: true,
         removeComments: true,
