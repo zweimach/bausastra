@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.0",
+    "eslint-import-resolver-node": "0.3.3",
+    "eslint-import-resolver-webpack": "0.12.1",
+    "eslint-loader": "3.0.3",
+    "eslint-plugin-compat": "3.5.1",
+    "eslint-plugin-eslint-comments": "3.1.2",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jest": "23.8.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "2.5.0",
+    "eslint-plugin-unicorn": "17.2.0",
+    "husky": "4.2.3",
+    "lint-staged": "10.0.8",
+    "prettier": "1.19.1",
+    "rxjs": "6.5.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,html,css,json,md,yml,yaml}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
+  }
+}

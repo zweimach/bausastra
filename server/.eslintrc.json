@@ -1,0 +1,19 @@
+{
+  "env": {
+    "browser": false,
+    "node": true
+  },
+  "globals": {
+    "__dirname": "readonly",
+    "__filename": "readonly"
+  },
+  "overrides": [
+    {
+      "files": ["src/*"],
+      "extends": ["plugin:node/recommended-module"],
+      "rules": {
+        "node/no-unpublished-import": "off"
+      }
+    }
+  ]
+}
