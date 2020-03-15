@@ -11,7 +11,7 @@ const rootDirectory = path.resolve(__dirname);
 const buildDirectory = path.join(rootDirectory, "build");
 
 module.exports = function(environment) {
-  const isDevelopment = !environment.production;
+  const isDevelopment = environment !== "production";
   return {
     mode: isDevelopment ? "development" : "production",
     target: "web",
@@ -24,7 +24,6 @@ module.exports = function(environment) {
       rules: getLoaders(isDevelopment),
     },
     resolve: {
-      extensions: [".js", ".json"],
       alias: isDevelopment
         ? { "react-dom": "@hot-loader/react-dom" }
         : undefined,

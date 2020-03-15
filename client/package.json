@@ -1,9 +1,10 @@
 {
   "name": "@bausastra/client",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack --env.production",
+    "start": "webpack-dev-server --env development",
+    "build": "webpack --env production",
     "test": "jest"
   },
   "dependencies": {
